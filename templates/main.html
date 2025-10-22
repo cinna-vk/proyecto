@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-top-bar">
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="#">CONTACTO</a></li>
+                    <li><a href="#">LEGAL</a></li>
+                    <li><a href="#">PRIVACIDAD</a></li>
+                    <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
+                    <li><a href="#">NEWSLETTER</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="social-lang">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-times"></i></a>
+            </div>
+        </div>
+
+        <div class="header-main-bar">
+            <div class="logo-and-menu">
+                <div class="logo">
+                    <img src="../statics/img/logo.png" alt="Logo">
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#">INICIO</a></li>
+                        <li><a href="#">LOGIN</a></li>
+                        <li><a href="#">SOBRE NOSOTROS</a></li>
+                        <li class="lang-selector">
+                            <img src="../statics/img/es_flag.png" alt="Bandera de España">
+                            <select id="lang" name="lang">
+                                <option>ES</option>
+                                </select>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <button id="menuButton" class="menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="menu-overlay" id="mobileMenu">
+            <button id="closeMenuButton" class="close-button">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="#">SOBRE NOSOTROS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+                </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-section" id="heroCarousel">
+            <div class="slide current-slide" style="background-image: url('../statics/img/biciimg.png');">
+                <div class="hero-content">
+                    <h1>PHOTOGRAPHY<br>Slogan</h1>
+                    <input id="busqueda" type="text" placeholder="Búsqueda por Evento">
+                </div>
+            </div>
+            </div>
+
+        <div class="posts-section">
+            <div class="post-grid">
+                <div class="post white-post">
+                    <img src="../statics/img/evento1.png" alt="Boda" class="event-logo">
+                    <div class="post-info">
+                        <p class="post-date">18/10/2025</p>
+                        <h3 class="post-title">Boda</h3>
+                    </div>
+                </div>
+                <div class="post white-post">
+                    <img src="../statics/img/evento1.png" alt="Juegos" class="event-logo">
+                    <div class="post-info">
+                        <p class="post-date">18/10/2025</p>
+                        <h3 class="post-title">Juegos</h3>
+                    </div>
+                </div>
+                <div class="post white-post">
+                    <img src="../statics/img/evento1.png" alt="Concursos" class="event-logo">
+                    <div class="post-info">
+                        <p class="post-date">18/10/2025</p>
+                        <h3 class="post-title">Concursos</h3>
+                    </div>
+                </div>
+                <div class="post white-post">
+                    <img src="../statics/img/evento2.png" alt="Fiestas" class="event-logo">
+                    <div class="post-info">
+                        <p class="post-date">19/10/2025</p>
+                        <h3 class="post-title">Fiestas</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="show-more-button">Mostrar más</button>
+        </div>
+        
+        <!--<div class="hiring-banner">
+            <p>¡Estamos contratando!</p>
+            <button class="close-hiring-banner">&times;</button>
+        </div>-->
+
+    </main>
+
+    <footer class="main-footer">
+        <nav>
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">NEWSLETTER</a></li>
+                <li><a href="#">TRABAJOS</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#">LEGAL</a></li>
+                <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
+                <li><a href="#">PRIVACIDAD</a></li>
+                <li><a href="#">COOKIES</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main_script.js') }}"></script>
+</body>
+</html>

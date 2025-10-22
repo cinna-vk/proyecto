@@ -1,0 +1,386 @@
+/* Variables de Color */
+:root {
+    --color-primary-red: #da291c;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-dark-gray: #333333;
+    --color-light-gray: #f4f4f4;
+}
+
+/* Base and Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* HEADER - Barra superior (Contacto, Legal, etc.) */
+.main-header {
+    width: 100%;
+    position: absolute; /* Para que la imagen de fondo de hero section se vea */
+    top: 0;
+    left: 0;
+    z-index: 100;
+    color: var(--color-white);
+}
+
+.header-top-bar {
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: center;
+    padding: 5px 20px;
+    font-size: 12px;
+}
+.header-top-bar .logo-and-menu {
+    display: flex;
+    justify-content: center;   /* Centra íconos y botones */
+    align-items: center;       /* Centra verticalmente todo */
+    gap: 15px;                 /* Espacio entre elementos */
+    flex-wrap: wrap;           /* Permite que bajen en pantallas pequeñas */
+    text-align: center;        /* Centra el texto dentro de cada ítem */
+}
+.top-nav ul {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+    justify-content: center;
+}
+
+.social-lang a {
+    margin-left: 10px;
+}
+
+/* HEADER - Barra principal (Logo, Inicio, Login) */
+.header-main-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+}
+
+.logo-and-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo img {
+    /* Aquí se asumiría un logo con el texto "SPORTOGRAF" y el icono */
+    width: 150px; /* Ajusta según el tamaño de tu imagen de logo */
+    height: auto;
+}
+
+.main-nav {
+    display: none; /* Ocultar por defecto para móvil */
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lang-selector img {
+    width: 20px;
+    height: 15px;
+}
+
+.lang-selector select {
+    background: transparent;
+    color: var(--color-white);
+    border: none;
+    appearance: none; /* Eliminar estilo nativo del select */
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Menú Móvil (Overlay) */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    transform: translateX(100%); /* Oculto por defecto */
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-overlay.open {
+    transform: translateX(0); /* Mostrar */
+}
+
+.menu-overlay .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu-overlay ul {
+    text-align: center;
+}
+
+.menu-overlay li {
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+
+/* HERO SECTION (Carrusel) */
+.hero-section {
+    width: 100%;
+    height: 65vh; /* Ocupar toda la altura de la ventana */
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    color: var(--color-white);
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    max-width: 90%;
+}
+
+
+.hero-content h1 {
+    font-size: 4vw; /* Responsive font size */
+    font-weight: 900;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.hero-content #busqueda {
+    padding: 15px 20px;
+    width: 350px;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    outline: none;
+}
+
+/* POSTS SECTION (Eventos) */
+.posts-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.post-grid {
+    display: grid;
+    /* Por defecto, una columna para móvil */
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.post {
+    border: 1px solid var(--color-light-gray);
+    text-align: left;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.white-post {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-dark-gray);
+}
+
+.post-img-placeholder {
+    /* Placeholder para las imágenes cuadradas o logos */
+    height: 250px;
+    width: 100%;
+    background-color: var(--color-dark-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.black-post .post-img-placeholder {
+    /* Aquí se podría poner un icono con el estilo de líneas */
+    background-color: var(--color-black);
+}
+
+.event-logo {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    padding: 30px;
+}
+
+.post-info {
+    padding: 15px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.black-post .post-date {
+    color: #aaa;
+}
+
+.post-title {
+    font-size: 18px;
+    margin: 5px 0 10px 0;
+    font-weight: 700;
+}
+
+.show-more-button {
+    background-color: var(--color-primary-red);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+.main-footer {
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+    font-size: 12px;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Banner de "Estamos contratando" */
+.hiring-banner {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-primary-red);
+    color: var(--color-white);
+    padding: 10px 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.close-hiring-banner {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Media Queries para Desktop */
+@media (min-width: 768px) {
+    .header-top-bar {
+        justify-content: space-between; /* Volver a poner el nav a la izquierda */
+    }
+
+    .main-nav {
+        display: block; /* Mostrar la navegación principal en desktop */
+    }
+
+    .menu-button {
+        display: none; /* Ocultar el botón de menú hamburguesa */
+    }
+
+    .hero-content {
+        left: 10%;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5vw;
+    }
+
+    .post-grid {
+        /* 4 columnas para desktop */
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .hiring-banner {
+        /* Ajuste para que se vea como en la esquina inferior derecha */
+        bottom: 10px;
+        right: 10px;
+        border-radius: 5px;
+    }
+}
