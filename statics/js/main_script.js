@@ -21,12 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 2. Simulación de Carrusel (Cambio de fondo) ---
-    // Nota: Como solo hay una imagen, esto solo es un placeholder de la funcionalidad
     const slides = [
-        '../statics/img/hero_bike.jpg', // La imagen actual
-        // Agrega más URLs de imágenes aquí para que realmente rote
-        // '../statics/img/hero_running.jpg', 
-        // '../statics/img/hero_swim.jpg', 
+        '../statics/img/carrusel/biciimg.jpg',
+        '../statics/img/carrusel/bodaimg.jpg',
+        '../statics/img/carrusel/corriendoimg.jpg'
     ];
     let currentSlideIndex = 0;
 

@@ -12,6 +12,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-weight: 700;
 }
 
 body {
@@ -39,26 +40,26 @@ ul {
     z-index: 100;
     color: var(--color-white);
 }
-
 .header-top-bar {
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
-    display: flex;
-    justify-content: center;
-    padding: 5px 20px;
-    font-size: 12px;
+    display: none;
 }
-.header-top-bar .logo-and-menu {
-    display: flex;
-    justify-content: center;   /* Centra íconos y botones */
-    align-items: center;       /* Centra verticalmente todo */
-    gap: 15px;                 /* Espacio entre elementos */
-    flex-wrap: wrap;           /* Permite que bajen en pantallas pequeñas */
-    text-align: center;        /* Centra el texto dentro de cada ítem */
+
+.main-nav {
+    display: none; /* Esto ya oculta el <ul> principal, bien. */
 }
+.lang-selector {
+    display: none; /* Asegura que el selector de idioma de Desktop no aparezca en móvil */
+}
+.top-nav {
+    /* Permitir que la lista interna se centre en desktop */
+    display: flex;
+    /* MARGIN-AUTO se aplicará en Desktop para centrar esta sección */
+}
+
 .top-nav ul {
     display: flex;
     gap: 15px;
-    margin-right: 20px;
+    margin-right: 0;
     justify-content: center;
 }
 
@@ -69,20 +70,22 @@ ul {
 /* HEADER - Barra principal (Logo, Inicio, Login) */
 .header-main-bar {
     display: flex;
-    justify-content: space-between;
+    /* En móvil, usamos space-between para separar el logo del menú hamburguesa */
+    justify-content: space-between; 
     align-items: center;
     padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    position: relative; /* Necesario para posicionar el menú button en móvil */
 }
 
 .logo-and-menu {
     display: flex;
     align-items: center;
     gap: 30px;
+    /* En móvil, solo queremos el logo a la izquierda */
 }
 
 .logo img {
-    /* Aquí se asumiría un logo con el texto "SPORTOGRAF" y el icono */
     width: 150px; /* Ajusta según el tamaño de tu imagen de logo */
     height: auto;
 }
@@ -118,27 +121,29 @@ ul {
     font-size: 14px;
 }
 
+
 .menu-button {
     background: none;
     border: none;
     color: var(--color-white);
     font-size: 20px;
     cursor: pointer;
+    /* CRÍTICO: Posiciona el botón correctamente en el flujo flex de la barra principal en móvil */
+    position: static;
 }
-
-/* Menú Móvil (Overlay) */
+/* Menú Móvil (Overlay) - ESTILOS ACTUALIZADOS */
 .menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-black);
+    background-color: var(--color-dark-gray); /* Fondo Gris Oscuro como en la imagen */
     color: var(--color-white);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Alineamos a la izquierda */
+    padding-top: 80px; /* Espacio para el botón de cerrar */
     z-index: 200;
     transform: translateX(100%); /* Oculto por defecto */
     transition: transform 0.3s ease-in-out;
@@ -159,20 +164,88 @@ ul {
     cursor: pointer;
 }
 
-.menu-overlay ul {
-    text-align: center;
+/* 1. Menú Principal (INICIO, LOGIN...) */
+.mobile-main-menu {
+    width: 100%;
+    padding: 0 40px 20px 40px; /* Ajuste de padding */
 }
 
-.menu-overlay li {
-    margin: 20px 0;
+.mobile-main-menu ul {
+    text-align: left;
+    padding: 0;
+}
+
+.mobile-main-menu li {
+    margin: 15px 0;
     font-size: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Línea divisoria */
+    padding-bottom: 5px;
+}
+
+.mobile-main-menu li:last-child {
+    border-bottom: none; /* Quitamos la línea del último elemento (lenguaje) */
+}
+
+/* Selector de Idioma Móvil */
+.lang-selector-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: normal !important;
+    padding: 5px 0;
+    border-bottom: none !important;
+}
+
+.lang-selector-mobile img {
+    width: 30px;
+    height: 20px;
+}
+
+.lang-selector-mobile select {
+    background: transparent;
+    color: var(--color-white);
+    border: none;
+    appearance: none; 
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* 2. Sección Social y Legal */
+.mobile-social-and-legal {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    margin-top: auto; /* Empuja el contenido al fondo */
+}
+
+.mobile-social-icons {
+    font-size: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Línea sobre iconos sociales */
+    padding-top: 30px;
+}
+
+.mobile-social-icons a {
+    margin: 0 10px;
+}
+
+/* Enlaces legales (barra superior original) */
+.mobile-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 25px; /* Más espacio entre filas y columnas */
+    font-size: 14px;
 }
 
 
 /* HERO SECTION (Carrusel) */
+/* ... (mantener estilos existentes) ... */
 .hero-section {
     width: 100%;
-    height: 65vh; /* Ocupar toda la altura de la ventana */
+    height: 65vh; 
     position: relative;
     overflow: hidden;
 }
@@ -199,7 +272,7 @@ ul {
 
 
 .hero-content h1 {
-    font-size: 4vw; /* Responsive font size */
+    font-size: 4vw; 
     font-weight: 900;
     line-height: 1.1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -224,7 +297,6 @@ ul {
 
 .post-grid {
     display: grid;
-    /* Por defecto, una columna para móvil */
     grid-template-columns: 1fr;
     gap: 20px;
     max-width: 1200px;
@@ -245,11 +317,9 @@ ul {
 .white-post {
     background-color: var(--color-white);
     color: var(--color-black);
-    border-color: var(--color-dark-gray);
 }
 
 .post-img-placeholder {
-    /* Placeholder para las imágenes cuadradas o logos */
     height: 250px;
     width: 100%;
     background-color: var(--color-dark-gray);
@@ -260,16 +330,14 @@ ul {
 }
 
 .black-post .post-img-placeholder {
-    /* Aquí se podría poner un icono con el estilo de líneas */
     background-color: var(--color-black);
 }
 
 .event-logo {
     width: 100%;
-    height: auto;
-    max-height: 250px;
-    object-fit: contain;
-    padding: 30px;
+    height: 250px;
+    object-fit: cover;
+    padding: 20px;
 }
 
 .post-info {
@@ -311,19 +379,49 @@ ul {
     background-color: var(--color-dark-gray);
     color: var(--color-white);
     padding: 40px 20px;
-    text-align: center;
+    text-align: left; 
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .main-footer ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 20px;
-    font-size: 12px;
+    display: block; 
+    padding: 0;
+    margin: 0;
+}
+
+.main-footer li {
+    margin-bottom: 5px; 
+    font-size: 14px;
 }
 
 .main-footer a:hover {
     text-decoration: underline;
+}
+
+.footer-payments {
+    order: 4; 
+    text-align: center;
+}
+
+.footer-social {
+    order: 1; 
+    text-align: center;
+}
+
+.social-icons-footer {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.social-icons-footer a {
+    margin: 0 5px;
 }
 
 /* Banner de "Estamos contratando" */
@@ -350,20 +448,82 @@ ul {
     cursor: pointer;
 }
 
-/* Media Queries para Desktop */
+/* Media Queries para Desktop (min-width: 768px) */
 @media (min-width: 768px) {
-    .header-top-bar {
-        justify-content: space-between; /* Volver a poner el nav a la izquierda */
+    /* --- BARRA SUPERIOR (HEADER-TOP-BAR) DESKTOP --- */
+.header-top-bar {
+    background-color: transparent; 
+    display: flex;
+    justify-content: space-between; 
+    padding: 5px 20px;
+    font-size: 12px;
+    position: static;
+}
+    .top-nav {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .social-lang {
+        position: static;
+        margin-left: auto;
     }
 
+    /* --- BARRA PRINCIPAL (HEADER-MAIN-BAR) DESKTOP --- */
+.header-main-bar {
+    display: flex;
+    padding: 10px 20px;
+    background-color: transparent; 
+}
+
+    .logo-and-menu {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; 
+        justify-content: space-between;
+    }
+    
+    .logo {
+        flex-shrink: 0;
+    }
+    
     .main-nav {
-        display: block; /* Mostrar la navegación principal en desktop */
+        display: block; 
+        margin-left: auto;
     }
 
     .menu-button {
-        display: none; /* Ocultar el botón de menú hamburguesa */
+        display: none; 
+        position: static;
     }
 
+    /* --- FOOTER DESKTOP --- */
+    .main-footer {
+        padding: 50px 20px;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr; 
+        gap: 40px;
+    }
+
+    .footer-column {
+        order: initial;
+    }
+
+    .footer-payments {
+        text-align: left;
+    }
+
+    .footer-social {
+        text-align: right; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+    }
+
+    /* --- OTROS ELEMENTOS DESKTOP --- */
     .hero-content {
         left: 10%;
     }
@@ -373,12 +533,10 @@ ul {
     }
 
     .post-grid {
-        /* 4 columnas para desktop */
         grid-template-columns: repeat(4, 1fr);
     }
     
     .hiring-banner {
-        /* Ajuste para que se vea como en la esquina inferior derecha */
         bottom: 10px;
         right: 10px;
         border-radius: 5px;

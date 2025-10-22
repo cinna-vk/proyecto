@@ -24,14 +24,13 @@
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fas fa-times"></i></a>
             </div>
         </div>
 
         <div class="header-main-bar">
             <div class="logo-and-menu">
                 <div class="logo">
-                    <img src="../statics/img/logo.png" alt="Logo">
+                    <img src="../statics/img/logo/image.png" alt="Logo">
                 </div>
                 <nav class="main-nav">
                     <ul>
@@ -39,10 +38,10 @@
                         <li><a href="#">LOGIN</a></li>
                         <li><a href="#">SOBRE NOSOTROS</a></li>
                         <li class="lang-selector">
-                            <img src="../statics/img/es_flag.png" alt="Bandera de España">
+                            <img src="../statics/img/flags/mexican.png" alt="Bandera de España">
                             <select id="lang" name="lang">
                                 <option>ES</option>
-                                </select>
+                            </select>
                         </li>
                     </ul>
                 </nav>
@@ -56,50 +55,74 @@
             <button id="closeMenuButton" class="close-button">
                 <i class="fas fa-times"></i>
             </button>
-            <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">LOGIN</a></li>
-                <li><a href="#">SOBRE NOSOTROS</a></li>
-                <li><a href="#">CONTACTO</a></li>
+            
+            <div class="mobile-main-menu">
+                <ul>
+                    <li><a href="#">INICIO</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">SOBRE NOSOTROS</a></li>
+                    <li class="lang-selector-mobile">
+                        <img src="../statics/img/flags/mexican.png" alt="Bandera de España">
+                        <select id="lang-mobile" name="lang">
+                            <option>ES</option>
+                        </select>
+                    </li>
                 </ul>
+            </div>
+
+            <div class="mobile-social-and-legal">
+                <div class="mobile-social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-times"></i></a> </div>
+
+                <div class="mobile-legal-links">
+                    <a href="#">CONTACTO</a>
+                    <a href="#">LEGAL</a>
+                    <a href="#">PRIVACIDAD</a>
+                    <a href="#">TÉRMINOS Y CONDICIONES</a>
+                    <a href="#">NEWSLETTER</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
         <div class="hero-section" id="heroCarousel">
-            <div class="slide current-slide" style="background-image: url('../statics/img/biciimg.png');">
+            <div class="slide current-slide" style="background-image: url('../statics/img/carrusel/biciimg.png');">
                 <div class="hero-content">
                     <h1>PHOTOGRAPHY<br>Slogan</h1>
                     <input id="busqueda" type="text" placeholder="Búsqueda por Evento">
                 </div>
             </div>
-            </div>
+        </div>
 
         <div class="posts-section">
             <div class="post-grid">
                 <div class="post white-post">
-                    <img src="../statics/img/evento1.png" alt="Boda" class="event-logo">
+                    <img src="../statics/img/img_containers/boda.png" alt="Boda" class="event-logo">
                     <div class="post-info">
                         <p class="post-date">18/10/2025</p>
                         <h3 class="post-title">Boda</h3>
                     </div>
                 </div>
                 <div class="post white-post">
-                    <img src="../statics/img/evento1.png" alt="Juegos" class="event-logo">
+                    <img src="../statics/img/img_containers/juegos.png" alt="Juegos" class="event-logo">
                     <div class="post-info">
                         <p class="post-date">18/10/2025</p>
                         <h3 class="post-title">Juegos</h3>
                     </div>
                 </div>
                 <div class="post white-post">
-                    <img src="../statics/img/evento1.png" alt="Concursos" class="event-logo">
+                    <img src="../statics/img/img_containers/concursos.png" alt="Concursos" class="event-logo">
                     <div class="post-info">
                         <p class="post-date">18/10/2025</p>
                         <h3 class="post-title">Concursos</h3>
                     </div>
                 </div>
                 <div class="post white-post">
-                    <img src="../statics/img/evento2.png" alt="Fiestas" class="event-logo">
+                    <img src="../statics/img/img_containers/fiestas.png" alt="Fiestas" class="event-logo">
                     <div class="post-info">
                         <p class="post-date">19/10/2025</p>
                         <h3 class="post-title">Fiestas</h3>
@@ -109,30 +132,55 @@
             
             <button class="show-more-button">Mostrar más</button>
         </div>
-        
-        <!--<div class="hiring-banner">
-            <p>¡Estamos contratando!</p>
-            <button class="close-hiring-banner">&times;</button>
-        </div>-->
-
     </main>
 
     <footer class="main-footer">
-        <nav>
-            <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">BLOG</a></li>
-                <li><a href="#">NEWSLETTER</a></li>
-                <li><a href="#">TRABAJOS</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#">CONTACTO</a></li>
-                <li><a href="#">LEGAL</a></li>
-                <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
-                <li><a href="#">PRIVACIDAD</a></li>
-                <li><a href="#">COOKIES</a></li>
-            </ul>
-        </nav>
+        <div class="footer-content">
+            
+            <div class="footer-column footer-payments">
+                <div class="payment-logos">
+                    <img src="../statics/img/payment_logos.png" alt="Métodos de Pago" style="width: 250px;">
+                </div>
+            </div>
+
+            <div class="footer-column footer-nav">
+                <nav>
+                    <ul>
+                        <li><a href="#">INICIO</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">NEWSLETTER</a></li>
+                        <li><a href="#">TRABAJOS</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-column footer-nav">
+                <nav>
+                    <ul>
+                        <li><a href="#">CONTACTO</a></li>
+                        <li><a href="#">LEGAL</a></li>
+                        <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
+                        <li><a href="#">PRIVACIDAD</a></li>
+                        <li><a href="#">COOKIES</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-column footer-social">
+                <div class="social-icons-footer">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="strava-logo">
+                    <p>COMPATIBLE WITH</p>
+                    <img src="../statics/img/strava_logo.png" alt="Compatible with Strava" style="width: 150px; margin-top: 5px;">
+                </div>
+            </div>
+
+        </div>
     </footer>
 
     <script src="{{ url_for('static', filename='js/main_script.js') }}"></script>
